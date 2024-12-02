@@ -42,7 +42,7 @@ const Footer = () => {
                     Gavin Campbell
                     <div className='member-icons'>
                             <a target='_blank' rel="noreferrer" href='https://github.com/gavinjcampbell83' ><FaGithub /></a>
-                            <a target='_blank' rel="noreferrer" href='#' ><FaLinkedin /></a>
+                            <a target='_blank' rel="noreferrer" href='https://www.linkedin.com/in/gavin-campbell-0707002a3/' ><FaLinkedin /></a>
                         </div>
                  </div>
             </div>
