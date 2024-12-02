@@ -2,13 +2,16 @@ from app.models import db, Cart, environment, SCHEMA
 from sqlalchemy.sql import text
 
 def seed_carts():
-    cart1 = Cart(user_id=1)  
-    cart2 = Cart(user_id=2)  
-    cart3 = Cart(user_id=3)
+    # Query for existing user cart IDs
+    existing_cart_user_ids = {cart.user_id for cart in Cart.query.all()}
 
-    db.session.add(cart1)
-    db.session.add(cart2)
-    db.session.add(cart3)
+    # Users to add carts for
+    user_ids = [1, 2, 3]
+
+    for user_id in user_ids:
+        if user_id not in existing_cart_user_ids:
+            new_cart = Cart(user_id=user_id)
+            db.session.add(new_cart)
 
     db.session.commit()
 
